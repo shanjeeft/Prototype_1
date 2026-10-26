@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <title>Min Jukebox</title>
+  <!-- Min egen CSS (farver, baggrund osv.) -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap CSS: giver accordionen dens UDSEENDE -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS: gør at albums kan FOLDE UD og IND, når man klikker -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <h1>🎵 Min Jukebox</h1>
+
+  <a href="index.html">Tilbage til forsiden</a>         <!-- Link tilbage til forsiden (ligger UDEN FOR accordionen) -->
+
+<div class="accordion" id="albumListe"></div>          <!-- TRIN 2: Den tomme kasse. JavaScript fylder den med albums (se trin 9) -->
+
+
+
+
+
+  <!-- TRIN 3: Her starter min JavaScript. Står nederst, så al HTML er indlæst først -->
+  <script>
+    // TRIN 4: HENT DATA
+    // fetch henter filen albums.json fra samme mappe
+    fetch("albums.json")
+                // Når filen er hentet: lav teksten om til JavaScript-objekter
+      .then(response => response.json())
+                  // Når det er gjort: nu hedder alle data "data". Al min kode skal stå inde i disse { }
+      .then(data => {
+                    // TEST: vis alle data i konsollen
+        console.log(data);
+
+                      // TRIN 5: FIND DEN TOMME KASSE
+                      // Finder <div id="albumListe"> på siden, så jeg ved hvor albums skal ind
+        const container = document.getElementById("albumListe");
+
+                      // TRIN 9 (del 1): DEN TOMME "KURV"
+                      // Her samler jeg HTML for alle albums. Står FØR løkken, så den ikke tømmes hver runde
+        let alleAlbums = "";
+
+                      // TRIN 6: LØKKE OVER ALBUMS (den ydre løkke)
+                      // Kører én gang for hvert album. "album" = det album, løkken står ved lige nu
+        data.albums.forEach(album => {
+                      // TEST: vis albummets titel i konsollen
+          console.log(album.title);
+
+                        // TRIN 7: LØKKE OVER SANGE (løkke inde i løkke)
+                        // Tom tekst til dette albums sange. Nulstilles for hvert nyt album
+          let sange = "";
+                        // Kører én gang for hver sang i albummet. "track" = den sang, løkken står ved
+          album.tracks.forEach(track => {
+                        // Laver sangen om til en <li>-linje og lægger den til "sange"
+            sange += `<li>${track.title}</li>`;
+          }); // <- slut på sangløkken
+
+          // TRIN 8: SKABELONEN FOR ÉT ALBUM
+          // Backticks ` ` gør at ${...} bliver fyldt med data fra dette album:
+          //   ${album.id}          -> unikt navn, så knappen åbner den rigtige boks
+          //   ${album.artist.name} -> kunstner på knappen
+          //   ${album.title}       -> albumtitel på knappen
+          //   ${sange}             -> listen med sange, der folder ud
+          let albumHtml = `
+          <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#album${album.id}"
+              aria-expanded="false"
+              aria-controls="album${album.id}">${album.artist.name} - ${album.title}
+            </button>
+          </h2>
+          <div id="album${album.id}"
+              class="accordion-collapse collapse"
+              data-bs-parent="#albumListe">
+          <div class="accordion-body">
+          <ol>${sange}</ol>
+          </div>
+          </div>
+          </div>
+          `;
+          // TEST: vis sangene for dette album i konsollen
+          console.log(sange);
+
+          // TRIN 9 (del 2): LÆG ALBUMMET I KURVEN
+          // += lægger dette albums HTML til det, der allerede er i kurven
+          alleAlbums += albumHtml;
+        }); // <- slut på albumløkken
+
+        // TRIN 9 (del 3): HÆLD KURVEN UD PÅ SIDEN
+        // Alle albums er samlet, så de sættes ind i den tomme kasse på én gang
+        container.innerHTML = alleAlbums;
+      }); // <- slut på .then(data => { ... })
+
+  </script>
+
+</body>
+
+</html>

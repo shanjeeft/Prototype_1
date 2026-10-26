@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Alle Sange</title>
+  <!-- Min egen CSS (farver, baggrund osv.) -->
+
+  <!-- Bootstrap CSS: giver accordionen dens UDSEENDE -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS: gør at albums kan FOLDE UD og IND, når man klikker -->
+   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+  
+  </script>
+</head>
+
+<body>
+<!-- Et linjeskift, så linket ikke står helt i toppen -->
+<br>
+<!-- Link tilbage til forsiden -->
+<a href="index.html">Tilbage til forsiden</a>
+<!-- Den tomme kasse / kurv. JavaScript fylder den med alle sange (se innerHTML nederst) -->
+<div class="accordion" id="alleSange"></div>
+
+<h2 id="knap"></h2>
+
+<button onclick="document.getElementById('knap').innerHTML = 'you have clicked the button'"
+>Click Me</button>
+
+<!-- Her starter min JavaScript. Står nederst i <body>, så kassen ovenfor er indlæst først -->
+<script>
+
+
+
+// HENT DATA: fetch henter filen albums.json fra samme mappe
+fetch("albums.json")
+    // Når filen er hentet: lav teksten om til JavaScript-objekter
+    .then(response => response.json())
+    // Når det er gjort: nu hedder alle data "data". Al min kode skal stå inde i disse { }
+    .then(data => {
+        let a = data.albums;     // a = alle albums (dit array)
+        let n = a.length;        // n = antal albums (338)
+        // TEST: vis antal albums i konsollen
+        console.log(n);
+        // Finder den tomme kasse <div id="alleSange"> på siden
+        const container = document.getElementById("alleSange");
+        // Den tomme "kurv": her samler jeg alle sange. Står FØR løkkerne, så den ikke tømmes
+        let alleSange = "";
+
+        // YDRE LØKKE: kører én gang for hvert album. i går fra 0 til 337
+        for (let i = 0; i < n ; i++){
+            // Albummet på plads i i listen (albummet i denne runde)
+            let album = a[i];
+
+            // INDRE LØKKE: kører én gang for hver sang i DETTE album. Bruger j, så den ikke blandes med i
+            for (let j = 0; j < album.tracks.length; j++){
+              // Sangen på plads j i albummets sangliste (sangen i denne runde)
+              let track = album.tracks[j];
+
+              // Laver én linje <li> med sangens titel, kunstner og album, og lægger den i kurven (+= læg til)
+              // Fast tekst står i " ", data (track.title osv.) står uden " ", og + sætter det sammen
+              alleSange += "<li>" + track.title + " - " + album.artist.name + " " + " - "  + "Album:" + " " + "(" + album.title + ")</li>" + "<br>";
+              } 
+            }; 
+            // HÆLD KURVEN UD PÅ SIDEN: alle sange sættes ind i kassen på én gang, pakket ind i <ol> (nummereret liste)
+            // Står EFTER begge løkker, så den kun kører én gang
+            container.innerHTML = "<ol>" + alleSange + "</ol>" ;
+    }); // <- slut på .then(data => { ... })
+
+
+</script>
+
+</body>
+</html>

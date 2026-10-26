@@ -1,0 +1,62 @@
+/* Farve og skrifttype på overskrifter */
+h1, h2, h3 {
+    color: red;
+    font-family: Arial;
+}
+
+
+/* Baggrund + afstand til kanten */
+body {
+    margin: 50px;
+    background: linear-gradient(to bottom left, grey, darkorange);
+    color: red;
+
+}
+
+
+/* Farve når musen holdes over et link */
+a:hover {
+    color: red;
+}
+ 
+/* Kant og skygge omkring billeder */
+img {
+    border: 5px solid red;
+    box-shadow: 5px 5px 15px black;
+}
+ 
+/* Styling af tabel */
+table {
+    background-image: url("salah.jpg");
+    background-size: cover;
+    border: 2px solid black;
+}
+ 
+td, th {
+    padding: 15px;
+    border: 1px solid black;
+}
+
+/* Knappen med albummets navn */
+.accordion-button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+/* Når musen er over knappen */
+.accordion-button:hover {
+    background-color: darkorange;
+}
+
+/* Når albummet er åbent */
+.accordion-button:not(.collapsed) {
+    background-color: darkorange;
+    color: black;
+}
+
+/* Boksen med sangene */
+.accordion-body {
+    background-color: #333;
+    color: white;
+}
