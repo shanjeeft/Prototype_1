@@ -62,7 +62,7 @@
 <div class=alleKolonner>
 	<div class=kolonne style="flex:0.25; justify-content:center">
     	<button>Albums</button>
-        <button>Kunstner</button>
+        <button onclick="hentArtists()">Kunstner</button>
         <button>Sange</button>
     </div>
     <div id="liste" class=kolonne style="padding-top:30px">
@@ -79,7 +79,7 @@
 
 
 //Shanjeeeef
-
+/*
 let sangeArray = [];
 let parrentElement = document.getElementById("liste");
 
@@ -100,12 +100,12 @@ fetchData("sange.json").then(function (sange) {
 //Abiiii og Philliiiip
 async function hentAlbums(){
 } 
-
+*/
 
 // Siiimon og Oliiiver
 async function hentArtists() {
     // 1. Hent JSON-filen (husk citationstegn omkring stien)
-    const svar = await fetch("db/artists.json");
+    const svar = await fetch("../db/artists.json");
     const kunstnere = await svar.json(); // .json() omdanner det direkte til et JavaScript-array!
 
     // 2. Find kolonnen med id="liste" (husk citationstegn omkring "liste")
