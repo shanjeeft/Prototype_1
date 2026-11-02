@@ -62,16 +62,11 @@
 <div class=alleKolonner>
 	<div class=kolonne style="flex:0.25; justify-content:center">
     	<button>Albums</button>
-        <button>Kunstner</button>
+        <button onclick="hentArtists()">Kunstner</button>
         <button>Sange</button>
     </div>
     <div id="liste" class=kolonne style="padding-top:30px">
-    	<button>Sang_1</button>
-        <p>hej sang<button>Sang_2</button></p>
-        <button>Sang_3</button>
-        <button>Sang_4</button>
-        <button>Sang_5</button>
-        
+
     </div>
     <div class=kolonne>
     	<div style="height:100px; border: 3px solid green">
@@ -80,55 +75,36 @@
     
 </div>
 <script>
-const Sange = await fetch(db/sange.json)
-const Albums = await fetch(db/albums.json)
-const Kunstner = await fetch(db/artists.json)
-const liste = document.getElementById(liste)
+
+
 
 //Shanjeeeef
-async function hentSange(sange){
-  for (let i = 1; i++;  )
-}
+/*
+let sangeArray = [];
+let parrentElement = document.getElementById("liste");
+
+fetchData("sange.json").then(function (sange) {
+  sange.forEach(function (v) {
+    sangeArray.push(new Sange(v.title_id, v.title, v.artist_id));
+  });
+
+  console.log(carsArray);
+
+  for (let i in carsArray) {
+    sangeArray[i].present(parrentElement);
+  }
+});
+
+
 
 //Abiiii og Philliiiip
 async function hentAlbums(){
-  // 1. Hent JSON-filen (../ betyder: gå ud af Frontend-mappen først)
-  const svar = await fetch("../db/albums.json");
-  const albums = await svar.json(); // .json() laver det om til et array med objekter
-
-
-    // 2. Find kolonnen med id="liste"
-  const liste = document.getElementById("liste")
-
-    
-  // 3. Tøm listen, før vi sætter nye ting ind
-  liste.innerHTML ="";
-  
-
-   // 4. Gå igennem alle albums i arrayet
-  for (const album of album) {
-      // Lav en knap til hvert album
-    const knap = document.createElement("button");
-    knap.id = "Albums-" + album.album_id;
-    knap.textContent = album.title + "("+album.realeased.slice(0, 4) +")";
-
-
-    // Tilføj et klik-event
-    knap.addEventListener("click", function() {
-        alert("Du trykkede på albummet: " + album.title + ", udgivet" + album.realeased);
-    });
-
-   
-    liste.appendChild(knap);   // Sæt knappen ind i kolonnen
-  }
 } 
 
-
-<script>
 // Siiimon og Oliiiver
 async function hentArtists() {
     // 1. Hent JSON-filen (husk citationstegn omkring stien)
-    const svar = await fetch("db/artists.json");
+    const svar = await fetch("../db/artists.json");
     const kunstnere = await svar.json(); // .json() omdanner det direkte til et JavaScript-array!
 
     // 2. Find kolonnen med id="liste" (husk citationstegn omkring "liste")
@@ -157,14 +133,14 @@ async function hentArtists() {
 hentArtists();
 </script>
 
-}
 
 
-    }
-}
 
-// Husk at kalde funktionen, så den rent faktisk kører!
-hentArtists();
+
+
+
+
+
 </script>
 
 </body>
