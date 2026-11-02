@@ -99,6 +99,41 @@ async function hentAlbums(){
 async function hentArtists(){
 
 }
+
+async function hentArtists() {
+    // 1. Hent filen (tilpas stien hvis den ligger i en 'db'-mappe)
+    const svar = await fetch("db/artists.csv"); 
+    const tekst = await svar.text();
+    
+    // 2. Del op i linjer
+    const linjer = tekst.trim().split("\n");
+
+    // 3. Find det element i HTML'en hvor kunstnerne skal vises
+    const liste = document.getElementById("Liste"); // (eller skift ID'et til f.eks. "kunstnerListe" hvis I laver et separat felt)
+
+    // 4. Løb linjerne igennem (start ved 1 for at springe over overskriften)
+    for (let i = 1; i < linjer.length; i++) {
+        const felter = linjer[i].split(",");
+        const kunstnerNavn = felter[0]; // Ret evt. til det index hvor navnet er i CSV'en
+
+        // Lav et element til at vise kunstneren
+        const række = document.createElement("div");
+        række.textContent = kunstnerNavn + " ";
+
+        // Tilføj evt. en knap hvis man skal kunne vælge kunstneren
+        const knap = document.createElement("button");
+        knap.textContent = "Vælg";
+        knap.addEventListener("click", function() {
+            alert("Du valgte kunstner: " + kunstnerNavn);
+        });
+
+        række.appendChild(knap);
+        liste.appendChild(række);
+    }
+}
+
+// Husk at kalde funktionen, så den rent faktisk kører!
+hentArtists();
 </script>
 
 </body>
