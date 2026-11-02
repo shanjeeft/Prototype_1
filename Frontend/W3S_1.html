@@ -66,12 +66,7 @@
         <button>Sange</button>
     </div>
     <div id="liste" class=kolonne style="padding-top:30px">
-    	<button>Sang_1</button>
-        <p>hej sang<button>Sang_2</button></p>
-        <button>Sang_3</button>
-        <button>Sang_4</button>
-        <button>Sang_5</button>
-        
+
     </div>
     <div class=kolonne>
     	<div style="height:100px; border: 3px solid green">
@@ -81,13 +76,26 @@
 </div>
 <script>
 
-const liste = document.getElementById("liste")
+
 
 //Shanjeeeef
-async function hentSange(){
-  const sange = await fetch(db/sange.json)
-  for (let i = 1; i++;  )
-}
+
+let sangeArray = [];
+let parrentElement = document.getElementById("liste");
+
+fetchData("sange.json").then(function (sange) {
+  sange.forEach(function (v) {
+    sangeArray.push(new Sange(v.title_id, v.title, v.artist_id));
+  });
+
+  console.log(carsArray);
+
+  for (let i in carsArray) {
+    sangeArray[i].present(parrentElement);
+  }
+});
+
+
 
 //Abiiii og Philliiiip
 async function hentAlbums(){
@@ -100,11 +108,15 @@ async function hentArtists(){
 }
 
 
-    }
+
+
+
+async function fetchData(url) {
+  let request = await fetch(url);
+  let json = await request.json();
+  return json;
 }
 
-// Husk at kalde funktionen, så den rent faktisk kører!
-hentArtists();
 </script>
 
 </body>
