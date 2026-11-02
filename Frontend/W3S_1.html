@@ -65,7 +65,7 @@
         <button>Kunstner</button>
         <button>Sange</button>
     </div>
-    <div class=kolonne style="padding-top:30px">
+    <div id="liste" class=kolonne style="padding-top:30px">
     	<button>Sang_1</button>
         <p>hej sang<button>Sang_2</button></p>
         <button>Sang_3</button>
@@ -80,7 +80,25 @@
     
 </div>
 <script>
+const Sange = await fetch(db/sange.csv)
+const Albums = await fetch(db/albums.csv)
+const Kunstner = await fetch(db/artists.csv)
+const liste = document.getElementById(liste)
 
+//Shanjeeeef
+async function hentSange(){
+
+}
+
+//Abiiii og Philliiiip
+async function hentAlbums(){
+
+}
+
+//Siiimon og Oliiiver
+async function hentArtists(){
+
+}
 </script>
 
 </body>
