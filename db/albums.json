@@ -1042,21 +1042,10 @@
         {
           "id": 50,
           "title": "You Oughta Know (Alternate)",
-          "duration_ms": 491885,
-          "size_bytes": 16008629,
-          "price_usd": 0.99,
           "genre": {
             "id": 1,
             "name": "Rock",
             "description": "A broad genre characterized by a strong rhythm, simple melodies, and often featuring electric guitars."
-          },
-          "media_type": {
-            "id": 1,
-            "name": "AAC",
-            "description": "Advanced Audio Coding, a digital audio format designed to be the successor of MP3, offering improved sound quality at similar bit rates.",
-            "sample_rate_khz": 44.1,
-            "bit_depth": 16,
-            "is_lossless": false
           }
         }
       ]
