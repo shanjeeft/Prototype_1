@@ -80,13 +80,12 @@
     
 </div>
 <script>
-const Sange = await fetch(db/sange.json)
-const Albums = await fetch(db/albums.json)
-const Kunstner = await fetch(db/artists.json)
-const liste = document.getElementById(liste)
+
+const liste = document.getElementById("liste")
 
 //Shanjeeeef
-async function hentSange(sange){
+async function hentSange(){
+  const sange = await fetch(db/sange.json)
   for (let i = 1; i++;  )
 }
 
