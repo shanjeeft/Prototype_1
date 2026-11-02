@@ -1,0 +1,116 @@
+[
+  {
+    "album_id": 1,
+    "title": "For Those About To Rock We Salute You",
+    "released": "1981-11-23",
+    "artist_id": 1
+  },
+  {
+    "album_id": 2,
+    "title": "Balls to the Wall",
+    "released": "1983-12-05",
+    "artist_id": 2
+  },
+  {
+    "album_id": 3,
+    "title": "Restless and Wild",
+    "released": "1982-10-02",
+    "artist_id": 2
+  },
+  {
+    "album_id": 4,
+    "title": "Let There Be Rock",
+    "released": "1977-03-21",
+    "artist_id": 1
+  },
+  {
+    "album_id": 5,
+    "title": "Big Ones",
+    "released": "1994-11-01",
+    "artist_id": 3
+  },
+  {
+    "album_id": 6,
+    "title": "Jagged Little Pill",
+    "released": "1995-06-13",
+    "artist_id": 4
+  },
+  {
+    "album_id": 7,
+    "title": "A Night at the Opera",
+    "released": "1975-11-21",
+    "artist_id": 5
+  },
+  {
+    "album_id": 8,
+    "title": "News of the World",
+    "released": "1977-10-28",
+    "artist_id": 5
+  },
+  {
+    "album_id": 9,
+    "title": "The Game",
+    "released": "1980-06-30",
+    "artist_id": 5
+  },
+  {
+    "album_id": 10,
+    "title": "Nevermind",
+    "released": "1991-09-24",
+    "artist_id": 6
+  },
+  {
+    "album_id": 11,
+    "title": "In Utero",
+    "released": "1993-09-21",
+    "artist_id": 6
+  },
+  {
+    "album_id": 12,
+    "title": "Ride the Lightning",
+    "released": "1984-07-27",
+    "artist_id": 7
+  },
+  {
+    "album_id": 13,
+    "title": "Master of Puppets",
+    "released": "1986-03-03",
+    "artist_id": 7
+  },
+  {
+    "album_id": 14,
+    "title": "Metallica",
+    "released": "1991-08-12",
+    "artist_id": 7
+  },
+  {
+    "album_id": 15,
+    "title": "Thriller",
+    "released": "1982-11-30",
+    "artist_id": 8
+  },
+  {
+    "album_id": 16,
+    "title": "Bad",
+    "released": "1987-08-31",
+    "artist_id": 8
+  },
+  {
+    "album_id": 17,
+    "title": "The Dark Side of the Moon",
+    "released": "1973-03-01",
+    "artist_id": 9
+  },
+  {
+    "album_id": 18,
+    "title": "Wish You Were Here",
+    "released": "1975-09-12",
+    "artist_id": 9
+  },
+  {
+    "album_id": 19,
+    "title": "OK Computer",
+    "released": "1997-05-21",
+    "artist_id": 10
+  }
+]
