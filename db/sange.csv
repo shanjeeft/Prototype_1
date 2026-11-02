@@ -1,0 +1,182 @@
+title_id,title,artist_id,album_id
+1,For Those About To Rock (We Salute You),1,1
+2,Put The Finger On You,1,1
+3,Let's Get It Up,1,1
+4,Inject The Venom,1,1
+5,Snowballed,1,1
+6,Evil Walks,1,1
+7,C.O.D.,1,1
+8,Breaking The Rules,1,1
+9,Night Of The Long Knives,1,1
+10,Spellbound,1,1
+11,Balls to the Wall,2,2
+12,Fast As a Shark,2,3
+13,Restless and Wild,2,3
+14,Princess of the Dawn,2,3
+15,Go Down,1,4
+16,Dog Eat Dog,1,4
+17,Let There Be Rock,1,4
+18,Bad Boy Boogie,1,4
+19,Problem Child,1,4
+20,Overdose,1,4
+21,Hell Ain't A Bad Place To Be,1,4
+22,Whole Lotta Rosie,1,4
+23,Walk On Water,3,5
+24,Love In An Elevator,3,5
+25,Rag Doll,3,5
+26,What It Takes,3,5
+27,Dude (Looks Like A Lady),3,5
+28,Janie's Got A Gun,3,5
+29,Cryin',3,5
+30,Amazing,3,5
+31,Blind Man,3,5
+32,Deuces Are Wild,3,5
+33,The Other Side,3,5
+34,Crazy,3,5
+35,Eat The Rich,3,5
+36,Angel,3,5
+37,Livin' On The Edge,3,5
+38,All I Really Want,4,6
+39,You Oughta Know,4,6
+40,Perfect,4,6
+41,Hand In My Pocket,4,6
+42,Right Through You,4,6
+43,Forgiven,4,6
+44,You Learn,4,6
+45,Head Over Feet,4,6
+46,Mary Jane,4,6
+47,Ironic,4,6
+48,Not The Doctor,4,6
+49,Wake Up,4,6
+50,You Oughta Know (Alternate),4,6
+51,Death on Two Legs (Dedicated to...),5,7
+52,Lazing on a Sunday Afternoon,5,7
+53,I'm in Love with My Car,5,7
+54,You're My Best Friend,5,7
+55,'39,5,7
+56,Sweet Lady,5,7
+57,Seaside Rendezvous,5,7
+58,The Prophet's Song,5,7
+59,Love of My Life,5,7
+60,Good Company,5,7
+61,Bohemian Rhapsody,5,7
+62,God Save the Queen,5,7
+63,We Will Rock You,5,8
+64,We Are the Champions,5,8
+65,Sheer Heart Attack,5,8
+66,All Dead All Dead,5,8
+67,Spread Your Wings,5,8
+68,Fight from the Inside,5,8
+69,Get Down Make Love,5,8
+70,Sleeping on the Sidewalk,5,8
+71,Who Needs You,5,8
+72,It's Late,5,8
+73,My Melancholy Blues,5,8
+74,Play the Game,5,9
+75,Dragon Attack,5,9
+76,Another One Bites the Dust,5,9
+77,Need Your Loving Tonight,5,9
+78,Crazy Little Thing Called Love,5,9
+79,Rock It (Prime Jive),5,9
+80,Don't Try Suicide,5,9
+81,Sail Away Sweet Sister,5,9
+82,Coming Soon,5,9
+83,Save Me,5,9
+84,Smells Like Teen Spirit,6,10
+85,In Bloom,6,10
+86,Come as You Are,6,10
+87,Breed,6,10
+88,Lithium,6,10
+89,Polly,6,10
+90,Territorial Pissings,6,10
+91,Drain You,6,10
+92,Lounge Act,6,10
+93,Stay Away,6,10
+94,On a Plain,6,10
+95,Something in the Way,6,10
+96,Serve the Servants,6,11
+97,Scentless Apprentice,6,11
+98,Heart-Shaped Box,6,11
+99,Rape Me,6,11
+100,Frances Farmer Will Have Her Revenge on Seattle,6,11
+101,Dumb,6,11
+102,Very Ape,6,11
+103,Milk It,6,11
+104,Pennyroyal Tea,6,11
+105,Radio Friendly Unit Shifter,6,11
+106,Tourette's,6,11
+107,All Apologies,6,11
+108,Fight Fire with Fire,7,12
+109,Ride the Lightning,7,12
+110,For Whom the Bell Tolls,7,12
+111,Fade to Black,7,12
+112,Trapped Under Ice,7,12
+113,Escape,7,12
+114,Creeping Death,7,12
+115,The Call of Ktulu,7,12
+116,Battery,7,13
+117,Master of Puppets,7,13
+118,The Thing That Should Not Be,7,13
+119,Welcome Home (Sanitarium),7,13
+120,Disposable Heroes,7,13
+121,Leper Messiah,7,13
+122,Orion,7,13
+123,Damage Inc.,7,13
+124,Enter Sandman,7,14
+125,Sad but True,7,14
+126,Holier Than Thou,7,14
+127,The Unforgiven,7,14
+128,Wherever I May Roam,7,14
+129,Don't Tread on Me,7,14
+130,Through the Never,7,14
+131,Nothing Else Matters,7,14
+132,Of Wolf and Man,7,14
+133,The God That Failed,7,14
+134,My Friend of Misery,7,14
+135,The Struggle Within,7,14
+136,Wanna Be Startin' Somethin',8,15
+137,Baby Be Mine,8,15
+138,The Girl Is Mine,8,15
+139,Thriller,8,15
+140,Beat It,8,15
+141,Billie Jean,8,15
+142,Human Nature,8,15
+143,P.Y.T. (Pretty Young Thing),8,15
+144,The Lady in My Life,8,15
+145,Bad,8,16
+146,The Way You Make Me Feel,8,16
+147,Speed Demon,8,16
+148,Liberian Girl,8,16
+149,Just Good Friends,8,16
+150,Another Part of Me,8,16
+151,Man in the Mirror,8,16
+152,I Just Can't Stop Loving You,8,16
+153,Dirty Diana,8,16
+154,Smooth Criminal,8,16
+155,Speak to Me,9,17
+156,Breathe,9,17
+157,On the Run,9,17
+158,Time,9,17
+159,The Great Gig in the Sky,9,17
+160,Money,9,17
+161,Us and Them,9,17
+162,Any Colour You Like,9,17
+163,Brain Damage,9,17
+164,Eclipse,9,17
+165,Shine On You Crazy Diamond (Parts I-V),9,18
+166,Welcome to the Machine,9,18
+167,Have a Cigar,9,18
+168,Wish You Were Here,9,18
+169,Shine On You Crazy Diamond (Parts VI-IX),9,18
+170,Airbag,10,19
+171,Paranoid Android,10,19
+172,Subterranean Homesick Alien,10,19
+173,Exit Music (For a Film),10,19
+174,Let Down,10,19
+175,Karma Police,10,19
+176,Fitter Happier,10,19
+177,Electioneering,10,19
+178,Climbing Up the Walls,10,19
+179,No Surprises,10,19
+180,Lucky,10,19
+181,The Tourist,10,19
