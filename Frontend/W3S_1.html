@@ -63,7 +63,7 @@
 	<div class=kolonne style="flex:0.25; justify-content:center">
     	<button>Albums</button>
         <button onclick="hentArtists()">Kunstner</button>
-        <button>Sange</button>
+        <button onclick="hentSange()">Sange</button>
     </div>
     <div id="liste" class=kolonne style="padding-top:30px">
 
@@ -79,28 +79,16 @@
 
 
 //Shanjeeeef
-/*
-let sangeArray = [];
-let parrentElement = document.getElementById("liste");
-
-fetchData("sange.json").then(function (sange) {
-  sange.forEach(function (v) {
-    sangeArray.push(new Sange(v.title_id, v.title, v.artist_id));
-  });
-
-  console.log(carsArray);
-
-  for (let i in carsArray) {
-    sangeArray[i].present(parrentElement);
-  }
-});
+async function hentSange() {
+  const sange = fetch("../db/sange.json")
 
 
+}
 
 //Abiiii og Philliiiip
 async function hentAlbums(){
 } 
-*/
+
 
 // Siiimon og Oliiiver
 async function hentArtists() {
