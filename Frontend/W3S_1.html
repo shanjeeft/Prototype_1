@@ -92,7 +92,37 @@ async function hentSange(sange){
 
 //Abiiii og Philliiiip
 async function hentAlbums(){
+  // 1. Hent JSON-filen (../ betyder: gå ud af Frontend-mappen først)
+  const svar = await fetch("../db/albums.json");
+  const albums = await svar.json(); // .json() laver det om til et array med objekter
+
+
+    // 2. Find kolonnen med id="liste"
+  const liste = document.getElementById("liste")
+
+    
+  // 3. Tøm listen, før vi sætter nye ting ind
+  liste.innerHTML ="";
+  
+
+   // 4. Gå igennem alle albums i arrayet
+  for (const album of album) {
+      // Lav en knap til hvert album
+    const knap = document.createElement("button");
+    knap.id = "Albums-" + album.album_id;
+    knap.textContent = album.title + "("+album.realeased.slice(0, 4) +")";
+
+
+    // Tilføj et klik-event
+    knap.addEventListener("click", function() {
+        alert("Du trykkede på albummet: " + album.title + ", udgivet" + album.realeased);
+    });
+
+   
+    liste.appendChild(knap);   // Sæt knappen ind i kolonnen
+  }
 } 
+
 
 <script>
 // Siiimon og Oliiiver
