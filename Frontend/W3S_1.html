@@ -3,6 +3,10 @@
 <head>
 <style>
 
+#liste {
+  overflow-y:auto;
+}
+
 .bar {
   display: flex;
   justify-content: space-between;
@@ -61,7 +65,7 @@
 
 <div class=alleKolonner>
 	<div class=kolonne style="flex:0.25; justify-content:center">
-    	<button>Albums</button>
+    	<button onclick="hentAlbums()">Albums</button>
         <button onclick="hentArtists()">Kunstner</button>
         <button onclick="hentSange()">Sange</button>
     </div>
@@ -79,29 +83,50 @@
 
 
 //Shanjeeeef
-async function hentSange(limit) {
+async function hentSange() {
   const svarSange = await fetch("../db/sange.json");
+  const svarArtist = await fetch("../db/artists.json")
   const sange = await svarSange.json();
-
+  const artists = await svarArtist.json();
   const liste = document.getElementById("liste");
   console.log(sange);
   liste.innerText = "" ;
   for (const sang of sange){
     const knap = document.createElement("button");
-    knap.textContent = sang.title ;
+    
+    let artistName = "" ;
+    for (const artist of artists)
+      if(artist.artist_id === sang.artist_id){
+        artistName = artist.name;
+        };
+    knap.textContent = sang.title + " - " + artistName;
     liste.appendChild(knap);
   }
 
 }
 
 //Abiiii og Philliiiip
-async function hentAlbums(){
-} 
-<<<<<<< HEAD
+async function hentAlbums() {
+  const svarAlbums = await fetch("../db/albums.json");
+  const svarArtist = await fetch("../db/artists.json")
+  const albums = await svarAlbums.json();
+  const artists = await svarArtist.json();
+  const liste = document.getElementById("liste");
+  console.log(albums);
+  liste.innerText = "" ;
+  for (const album of albums){
+    const knap = document.createElement("button");
+    
+    let artistName = "" ;
+    for (const artist of artists)
+      if(artist.artist_id === album.artist_id){
+        artistName = artist.name;
+        };
+    knap.textContent = album.title + " - " + artistName;
+    liste.appendChild(knap);
+  }
 
-=======
->>>>>>> refs/remotes/origin/main
-
+}
 // Siiimon og Oliiiver
 async function hentArtists() {
     // 1. Hent JSON-filen (husk citationstegn omkring stien)
