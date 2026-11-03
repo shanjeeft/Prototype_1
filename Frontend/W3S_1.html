@@ -79,9 +79,18 @@
 
 
 //Shanjeeeef
-async function hentSange() {
-  const sange = fetch("../db/sange.json")
+async function hentSange(limit) {
+  const svarSange = await fetch("../db/sange.json");
+  const sange = await svarSange.json();
 
+  const liste = document.getElementById("liste");
+  console.log(sange);
+  liste.innerText = "" ;
+  for (const sang of sange){
+    const knap = document.createElement("button");
+    knap.textContent = sang.title ;
+    liste.appendChild(knap);
+  }
 
 }
 
