@@ -2,51 +2,61 @@
   {
     "artist_id": 1,
     "name": "AC/DC",
-    "country": "AU"
+    "country": "AU",
+    "genre": "Rock"
   },
   {
     "artist_id": 2,
     "name": "Accept",
-    "country": "DE"
+    "country": "DE",
+    "genre": "Metal"
   },
   {
     "artist_id": 3,
     "name": "Aerosmith",
-    "country": "US"
+    "country": "US",
+    "genre": "Rock"
   },
   {
     "artist_id": 4,
     "name": "Alanis Morissette",
-    "country": "CA"
+    "country": "CA",
+    "genre": "Pop"
   },
   {
     "artist_id": 5,
     "name": "Queen",
-    "country": "GB"
+    "country": "GB",
+    "genre": "Rock"
   },
   {
     "artist_id": 6,
     "name": "Nirvana",
-    "country": "US"
+    "country": "US",
+    "genre": "Grunge"
   },
   {
     "artist_id": 7,
     "name": "Metallica",
-    "country": "US"
+    "country": "US",
+    "genre": "Metal"
   },
   {
     "artist_id": 8,
     "name": "Michael Jackson",
-    "country": "US"
+    "country": "US",
+    "genre": "Pop"
   },
   {
     "artist_id": 9,
     "name": "Pink Floyd",
-    "country": "GB"
+    "country": "GB",
+    "genre": "Rock"
   },
   {
     "artist_id": 10,
     "name": "Radiohead",
-    "country": "GB"
+    "country": "GB",
+    "genre": "Alternativ"
   }
 ]

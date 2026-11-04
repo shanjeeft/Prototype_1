@@ -1,54 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 <head>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
- <link href="CSS/jukebox.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>JukeBox GR4</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .kolonner { display: flex; gap: 10px; margin-top: 10px; }
+    .kolonne { border: 3px solid green; padding: 10px; height: 450px; overflow-y: auto; }
+    summary { cursor: pointer; font-weight: bold; }
+    #besked { color: darkred; }
+  </style>
 </head>
 <body>
+  <h1>JukeBox GR4</h1>
 
-<div class=bar>
-	<div class=barEmner>JukeBox GR4
-    </div>
-    <div class=barSearch style="justify-content:center">
-    	<input>
-    </div>
-    <div class=barEmner>
-    Kreditter
-    </div>
-</div>
+  <input id="soegefelt" placeholder="Søg på sang, kunstner eller album">
+  <select id="genreValg">
+    <option value="">Alle genrer</option>
+    <option>Rock</option>
+    <option>Metal</option>
+    <option>Pop</option>
+    <option>Grunge</option>
+    <option>Alternativ</option>
+  </select>
+  <p id="besked"></p>
 
-<div class=alleKolonner>
-	<div class=kolonne style="flex:0.25; justify-content:center">
-    	<button onclick="hentAlbums()">Albums</button>
-        <button onclick="hentArtists()">Kunstner</button>
-        <button onclick="hentSange()">Sange</button>
+  <div class="kolonner">
+    <div class="kolonne">
+      <button id="knapSange" onclick="visSange(sange)">Sange</button><br>
+      <button id="knapAlbums" onclick="visAlbums()">Albums</button><br>
+      <button id="knapKunstner" onclick="visKunstnere()">Kunstner</button><br>
+      <button id="knapGenrer" onclick="visGenrer()">Genrer</button>
     </div>
-    <div id="liste" class=kolonne style="padding-top:30px">
 
+    <div id="liste" class="kolonne" style="flex: 1"></div>
+
+    <div class="kolonne" style="width: 320px">
+      <h3 id="koeOverskrift">Kø (0/5)</h3>
+      <button id="rydKoeKnap" onclick="rydKoe()">Ryd køen</button>
+      <div id="koe"></div>
     </div>
-      <div class=kolonne>
-    	  <div style="height:100px; border: 3px solid green">
-      </div>
-      <h6>Afspillings Kø:</h6>
-      <div id="koe">
-    	  <div style="height: 200px; border: 2px solid blue">
-      </div>
-    </div>
-  
-    
-</div>
+  </div>
 
-<!-- 3. Bootstrap JS – får accordion til at folde ud -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-
-<!-- 4. Vores egne filer – rækkefølgen betyder noget! -->
-<script src="js/faelles.js"></script>
-<script src="js/koe.js"></script>
-<script src="js/sange.js"></script>
-<script src="js/albums.js"></script>
-<script src="js/artists.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
