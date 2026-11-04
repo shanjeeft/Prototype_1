@@ -1,31 +1,57 @@
-<!DOCTYPE html>
-<html lang="da">
-<head>
-  <meta charset="UTF-8">
-  <title>JukeBox GR4</title>
-  <style>
+<!DOCTYPE html>                <!-- Fortæller browseren, at det er en moderne HTML5-side -->
+<html lang="da">               <!-- Starten på siden. lang="da" = siden er på dansk -->
+<head>                         <!-- head = information OM siden, som ikke vises direkte -->
+  <meta charset="UTF-8">       <!-- Gør at æ, ø og å vises korrekt -->
+  <title>JukeBox GR4</title>   <!-- Teksten i browserens fane -->
+
+  <style>                      <!-- Her starter vores CSS (udseendet) -->
+    /* Hele siden: skrifttype Arial og 20px luft hele vejen rundt */
     body { font-family: Arial; margin: 20px; }
+
+    /* Boksen med de tre kolonner: display:flex lægger dem ved siden af hinanden,
+       gap giver 10px mellemrum imellem dem */
     .kolonner { display: flex; gap: 10px; margin-top: 10px; }
+
+    /* Hver kolonne: grøn kant, luft indeni, fast højde på 450px,
+       og overflow-y: auto giver en scrollbar, hvis indholdet er for langt */
     .kolonne { border: 3px solid green; padding: 10px; height: 450px; overflow-y: auto; }
+
+    /* summary er overskriften på en fold-ud-boks: hånd-cursor og fed skrift,
+       så man kan se, at man kan klikke på den */
     summary { cursor: pointer; font-weight: bold; }
+
+    /* # betyder id: beskeden "Køen er fuld" vises med mørkerød tekst */
     #besked { color: darkred; }
   </style>
 </head>
-<body>
-  <h1>JukeBox GR4</h1>
 
+<body>                         <!-- body = alt det, man kan se på siden -->
+  <h1>JukeBox GR4</h1>         <!-- Sidens store overskrift -->
+
+  <!-- SØGNING -->
+  <!-- Søgefeltet. id="soegefelt" bruges i script.js til at læse, hvad man skriver.
+       placeholder er den grå hjælpetekst, der står i feltet, før man skriver -->
   <input id="soegefelt" placeholder="Søg på sang, kunstner eller album">
+
+  <!-- Rullemenu til at filtrere efter genre. id="genreValg" læses i script.js -->
   <select id="genreValg">
-    <option value="">Alle genrer</option>
+    <option value="">Alle genrer</option>   <!-- value="" betyder: ingen filter -->
     <option>Rock</option>
     <option>Metal</option>
     <option>Pop</option>
     <option>Grunge</option>
     <option>Alternativ</option>
   </select>
+
+  <!-- Tomt afsnit, hvor script.js skriver beskeder, fx "Køen er fuld" -->
   <p id="besked"></p>
 
+  <!-- DE TRE KOLONNER -->
   <div class="kolonner">
+
+    <!-- 1. Venstre kolonne: menuknapperne.
+         onclick = "når der klikkes, så kør denne funktion fra script.js".
+         Alle knapper har et id. <br> = linjeskift, så knapperne står under hinanden -->
     <div class="kolonne">
       <button id="knapSange" onclick="visSange(sange)">Sange</button><br>
       <button id="knapAlbums" onclick="visAlbums()">Albums</button><br>
@@ -33,15 +59,24 @@
       <button id="knapGenrer" onclick="visGenrer()">Genrer</button>
     </div>
 
+    <!-- 2. Midterkolonnen: starter tom. script.js fylder sange, albums osv. ind her.
+         flex: 1 betyder, at den fylder al den plads, der er tilbage -->
     <div id="liste" class="kolonne" style="flex: 1"></div>
 
+    <!-- 3. Højre kolonne: køen. Fast bredde på 320px -->
     <div class="kolonne" style="width: 320px">
+      <!-- Overskriften. script.js opdaterer tallet, fx "Kø (3/5)" -->
       <h3 id="koeOverskrift">Kø (0/5)</h3>
+      <!-- Knap der tømmer køen ved at køre rydKoe() i script.js -->
       <button id="rydKoeKnap" onclick="rydKoe()">Ryd køen</button>
+      <!-- Tom boks, hvor script.js viser sangene i køen -->
       <div id="koe"></div>
     </div>
+
   </div>
 
+  <!-- Henter vores JavaScript. Står nederst, så alle elementerne ovenfor
+       findes, når scriptet begynder at lede efter dem med getElementById -->
   <script src="script.js"></script>
 </body>
 </html>
